@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "task": "Give dog a bath",
+    "complete": true,
+    "color": "red"
+  },
+  {
+    "id": 2,
+    "task": "Do laundry",
+    "complete": true,
+    "color": "green"
+  },
+  {
+    "id": 3,
+    "task": "Vacuum floor",
+    "complete": false,
+    "color": "red"
+  },
+  {
+    "id": 4,
+    "task": "Feed cat",
+    "complete": true,
+    "color": "red"
+  }
+]

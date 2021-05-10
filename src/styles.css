@@ -1,0 +1,11 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #87ceeb;
+}
+.todo {
+  cursor: pointer;
+}
+.strike {
+  text-decoration: line-through;
+}
