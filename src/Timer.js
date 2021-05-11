@@ -14,10 +14,15 @@ const inputStyle = {
   marginBottom: "5px"
 };
 
+const textStyle = {
+  color: "#ffffff",
+  fontWeight: "200px",
+  padding: "2%"
+};
+
 const Timer = ({ addTask }) => {
   const [counterSecond, setCounterSecond] = React.useState(0);
-  const [counter, setCounter] = React.useState(10);
-  const [time, setTime] = React.useState("");
+  const [counter, setCounter] = React.useState(120);
   const [status, setStatus] = React.useState("working");
   const [userInput, setUserInput] = React.useState("");
   const [showModal, setModal] = React.useState(false);
@@ -31,8 +36,10 @@ const Timer = ({ addTask }) => {
         1000
       );
       counterId = setTimeout(() => setCounter(counter - 1), 1000);
+      if (counter === 0) {
+        setStatus("stop");
+      }
     }
-
     return () => {
       clearTimeout(counterId);
       clearTimeout(secondCounterId);
@@ -44,14 +51,17 @@ const Timer = ({ addTask }) => {
   };
   const stopTimers = () => {
     setStatus("paused");
-    setModal(!showModal);
     setCounterSecond(0);
+    setModal(false);
+    setCounter(120);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTime(counterSecond);
-    addTask(userInput, time);
+    setCounter(counter);
+    setStatus("working");
+    setUserInput("");
+    addTask(userInput, counter);
   };
 
   const handleModal = () => {
@@ -66,14 +76,14 @@ const Timer = ({ addTask }) => {
       </button>
       {showModal && (
         <>
-          <div>Time left to finish the Task: {counterSecond}</div>
+          <div style={textStyle}>Time left to finish the Task: {counter}</div>
           <form onSubmit={handleSubmit}>
             <input
               value={userInput}
               type="text"
               style={inputStyle}
               onChange={handleChange}
-              placeholder="Enter title..."
+              placeholder="Enter task..."
             />
             <button style={buttonStyle}>Add</button>{" "}
           </form>

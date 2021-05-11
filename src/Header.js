@@ -1,9 +1,9 @@
 import React from "react";
 
 const headerStyle = {
-  color: "#ffffff",
+  color: "#87ceeb",
   padding: "5%",
-  border: "1px solid #ffffff"
+  border: "1px solid #87ceeb"
 };
 
 const Header = () => {

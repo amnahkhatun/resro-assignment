@@ -29,10 +29,10 @@ function App() {
 
   const addTask = (userInput, time) => {
     let color;
-    if (time < 10) {
-      color = "red";
-    } else {
+    if (time <= 120 && time > 0) {
       color = "green";
+    } else {
+      color = "red";
     }
     let copy = [...toDoList];
     copy = [

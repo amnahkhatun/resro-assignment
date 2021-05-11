@@ -1,6 +1,6 @@
 import React from "react";
 
-const Task = ({ todo, handleToggle, color }) => {
+const Task = ({ todo, handleToggle }) => {
   const handleClick = (e) => {
     e.preventDefault();
     handleToggle(e.currentTarget.id);

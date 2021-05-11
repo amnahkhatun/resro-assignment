@@ -1,11 +1,14 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  background-color: #87ceeb;
 }
 .todo {
   cursor: pointer;
+  border: 1px solid #ffffff;
+  padding: 2%;
 }
 .strike {
   text-decoration: line-through;
+  border: 1px solid #ffffff;
+  padding: 2%;
 }
